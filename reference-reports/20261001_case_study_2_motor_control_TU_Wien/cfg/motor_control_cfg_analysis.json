@@ -1,0 +1,471 @@
+{
+  "cfg_analysis_results": {
+    "blocks": [
+      {
+        "block_id": 0,
+        "block_name": "B0",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 1,
+        "block_name": "B1",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 2,
+        "block_name": "B2",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 3,
+        "block_name": "B3",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B3T",
+            "path_label": "B3F"
+          },
+          {
+            "path_label": "B3T",
+            "predicate": "(motor_current > 100)"
+          }
+        ],
+        "successors": [
+          2,
+          1
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 4,
+        "block_name": "B4",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 5,
+        "block_name": "B5",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 6,
+        "block_name": "B6",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B6T",
+            "path_label": "B6F"
+          },
+          {
+            "path_label": "B6T",
+            "predicate": "(motor_current > 10)"
+          }
+        ],
+        "successors": [
+          5,
+          4
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 7,
+        "block_name": "B7",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B7T",
+            "path_label": "B7F"
+          },
+          {
+            "negated_from": "B7F.B3T",
+            "path_label": "B7F.B3F"
+          },
+          {
+            "path_label": "B7F.B3T",
+            "predicate": "(motor_current > 100)"
+          },
+          {
+            "path_label": "B7T",
+            "predicate": "(error < -20)"
+          },
+          {
+            "negated_from": "B7T.B6T",
+            "path_label": "B7T.B6F"
+          },
+          {
+            "path_label": "B7T.B6T",
+            "predicate": "(motor_current > 10)"
+          }
+        ],
+        "successors": [
+          6,
+          3
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 8,
+        "block_name": "B8",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 9,
+        "block_name": "B9",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 10,
+        "block_name": "B10",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B10T",
+            "path_label": "B10F"
+          },
+          {
+            "path_label": "B10T",
+            "predicate": "(motor_current < 100)"
+          }
+        ],
+        "successors": [
+          9,
+          8
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 11,
+        "block_name": "B11",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B11T",
+            "path_label": "B11F"
+          },
+          {
+            "negated_from": "B11F.B7T",
+            "path_label": "B11F.B7F"
+          },
+          {
+            "negated_from": "B11F.B7F.B3T",
+            "path_label": "B11F.B7F.B3F"
+          },
+          {
+            "path_label": "B11F.B7F.B3T",
+            "predicate": "(motor_current > 100)"
+          },
+          {
+            "path_label": "B11F.B7T",
+            "predicate": "((target_speed - actual_speed) < -20)"
+          },
+          {
+            "negated_from": "B11F.B7T.B6T",
+            "path_label": "B11F.B7T.B6F"
+          },
+          {
+            "path_label": "B11F.B7T.B6T",
+            "predicate": "(motor_current > 10)"
+          },
+          {
+            "path_label": "B11T",
+            "predicate": "((target_speed - actual_speed) > 20)"
+          },
+          {
+            "negated_from": "B11T.B10T",
+            "path_label": "B11T.B10F"
+          },
+          {
+            "path_label": "B11T.B10T",
+            "predicate": "(motor_current < 100)"
+          }
+        ],
+        "successors": [
+          10,
+          7
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 12,
+        "block_name": "B12",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 13,
+        "block_name": "B13",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B13T",
+            "path_label": "B13F"
+          },
+          {
+            "negated_from": "B13F.B11T",
+            "path_label": "B13F.B11F"
+          },
+          {
+            "negated_from": "B13F.B11F.B7T",
+            "path_label": "B13F.B11F.B7F"
+          },
+          {
+            "negated_from": "B13F.B11F.B7F.B3T",
+            "path_label": "B13F.B11F.B7F.B3F"
+          },
+          {
+            "path_label": "B13F.B11F.B7F.B3T",
+            "predicate": "(motor_current > 100)"
+          },
+          {
+            "path_label": "B13F.B11F.B7T",
+            "predicate": "((target_speed - actual_speed) < -20)"
+          },
+          {
+            "negated_from": "B13F.B11F.B7T.B6T",
+            "path_label": "B13F.B11F.B7T.B6F"
+          },
+          {
+            "path_label": "B13F.B11F.B7T.B6T",
+            "predicate": "(motor_current > 10)"
+          },
+          {
+            "path_label": "B13F.B11T",
+            "predicate": "((target_speed - actual_speed) > 20)"
+          },
+          {
+            "negated_from": "B13F.B11T.B10T",
+            "path_label": "B13F.B11T.B10F"
+          },
+          {
+            "path_label": "B13F.B11T.B10T",
+            "predicate": "(motor_current < 100)"
+          },
+          {
+            "path_label": "B13T",
+            "predicate": "(temperature > 80)"
+          }
+        ],
+        "successors": [
+          12,
+          11
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 14,
+        "block_name": "B14",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B14T",
+            "path_label": "B14F"
+          },
+          {
+            "negated_from": "B14F.B13T",
+            "path_label": "B14F.B13F"
+          },
+          {
+            "negated_from": "B14F.B13F.B11T",
+            "path_label": "B14F.B13F.B11F"
+          },
+          {
+            "negated_from": "B14F.B13F.B11F.B7T",
+            "path_label": "B14F.B13F.B11F.B7F"
+          },
+          {
+            "negated_from": "B14F.B13F.B11F.B7F.B3T",
+            "path_label": "B14F.B13F.B11F.B7F.B3F"
+          },
+          {
+            "path_label": "B14F.B13F.B11F.B7F.B3T",
+            "predicate": "(motor_current > 100)"
+          },
+          {
+            "path_label": "B14F.B13F.B11F.B7T",
+            "predicate": "((target_speed - actual_speed) < -20)"
+          },
+          {
+            "negated_from": "B14F.B13F.B11F.B7T.B6T",
+            "path_label": "B14F.B13F.B11F.B7T.B6F"
+          },
+          {
+            "path_label": "B14F.B13F.B11F.B7T.B6T",
+            "predicate": "(motor_current > 10)"
+          },
+          {
+            "path_label": "B14F.B13F.B11T",
+            "predicate": "((target_speed - actual_speed) > 20)"
+          },
+          {
+            "negated_from": "B14F.B13F.B11T.B10T",
+            "path_label": "B14F.B13F.B11T.B10F"
+          },
+          {
+            "path_label": "B14F.B13F.B11T.B10T",
+            "predicate": "(motor_current < 100)"
+          },
+          {
+            "path_label": "B14F.B13T",
+            "predicate": "(temperature > 80)"
+          },
+          {
+            "path_label": "B14T",
+            "predicate": "(fault != 0)"
+          }
+        ],
+        "successors": [
+          12,
+          13
+        ],
+        "terminator_type": "other"
+      },
+      {
+        "block_id": 15,
+        "block_name": "B15",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B14T",
+            "path_label": "B14F"
+          },
+          {
+            "negated_from": "B14F.B13T",
+            "path_label": "B14F.B13F"
+          },
+          {
+            "negated_from": "B14F.B13F.B11T",
+            "path_label": "B14F.B13F.B11F"
+          },
+          {
+            "negated_from": "B14F.B13F.B11F.B7T",
+            "path_label": "B14F.B13F.B11F.B7F"
+          },
+          {
+            "negated_from": "B14F.B13F.B11F.B7F.B3T",
+            "path_label": "B14F.B13F.B11F.B7F.B3F"
+          },
+          {
+            "path_label": "B14F.B13F.B11F.B7F.B3T",
+            "predicate": "(motor_current > 100)"
+          },
+          {
+            "path_label": "B14F.B13F.B11F.B7T",
+            "predicate": "((target_speed - actual_speed) < -20)"
+          },
+          {
+            "negated_from": "B14F.B13F.B11F.B7T.B6T",
+            "path_label": "B14F.B13F.B11F.B7T.B6F"
+          },
+          {
+            "path_label": "B14F.B13F.B11F.B7T.B6T",
+            "predicate": "(motor_current > 10)"
+          },
+          {
+            "path_label": "B14F.B13F.B11T",
+            "predicate": "((target_speed - actual_speed) > 20)"
+          },
+          {
+            "negated_from": "B14F.B13F.B11T.B10T",
+            "path_label": "B14F.B13F.B11T.B10F"
+          },
+          {
+            "path_label": "B14F.B13F.B11T.B10T",
+            "predicate": "(motor_current < 100)"
+          },
+          {
+            "path_label": "B14F.B13T",
+            "predicate": "(temperature > 80)"
+          },
+          {
+            "path_label": "B14T",
+            "predicate": "(fault != 0)"
+          }
+        ],
+        "successors": [
+          14
+        ],
+        "terminator_type": "none"
+      }
+    ],
+    "entry_block_id": 15,
+    "false_edges": "negated_from",
+    "representation": "incremental-edge-constraints",
+    "total_blocks": 16
+  }
+}

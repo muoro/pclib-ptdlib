@@ -1,0 +1,12 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "short_circuit_false_and",
+  "path_conditions": [
+    {
+      "path_label": "B4F",
+      "predicate": "(not(((0) != 0)))"
+    }
+  ],
+  "total_paths": 1
+}

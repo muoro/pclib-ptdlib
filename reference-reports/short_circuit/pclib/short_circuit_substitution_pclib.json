@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "total_nodes": 5,
+    "complete_paths": 3,
+    "stored_predicates": 2
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "6ba46b8941682677d5817c0fe9a796361f0c5b9b457ff158c97e0ceb67a47054",
+    "source_sha256": "39e098ee14ea2fda2d34dea4b7c740a9e49086c5ad91389e12c99079c68a3d3a"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 1
+    }
+  },
+  "function": {
+    "name": "short_circuit_substitution",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "name": "y",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B4F",
+      "parent": "",
+      "endpoint": "prefix",
+      "negated_from": "B4T"
+    },
+    {
+      "label": "B4F.B3F",
+      "parent": "B4F",
+      "endpoint": "exit",
+      "negated_from": "B4F.B3T"
+    },
+    {
+      "label": "B4F.B3T",
+      "parent": "B4F",
+      "endpoint": "exit",
+      "edge_condition": "((y - 2) > (x + 1))"
+    },
+    {
+      "label": "B4T",
+      "parent": "",
+      "endpoint": "exit",
+      "edge_condition": "((x + 1) > 0)"
+    }
+  ]
+}

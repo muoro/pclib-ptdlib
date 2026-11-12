@@ -1,0 +1,284 @@
+{
+  "schema": "pccscc-reference-reports",
+  "schema_version": 1,
+  "status": "complete",
+  "generated_at": "2026-11-12T17:37:25.867075+00:00",
+  "image": {
+    "Id": "sha256:10987bd9c6f7bed5470690e1c983f78e5cf814f4ae65093dac15c64bf3e9dd49",
+    "Os": "linux",
+    "Architecture": "amd64"
+  },
+  "build_info": {
+    "clang": {
+      "revision": "c33c978d766a6bbaec28fce7638354c549a75111",
+      "version": "clang version 22.0.0git (https://github.com/llvm/llvm-project.git c33c978d766a6bbaec28fce7638354c549a75111)"
+    },
+    "default_max_passes": 3,
+    "llvm": {
+      "revision": "c33c978d766a6bbaec28fce7638354c549a75111",
+      "version": "22.0.0git"
+    },
+    "schema": "pccscc-build-info",
+    "schema_version": 1,
+    "semantics": "mathematical-integers",
+    "solver_defaults": {
+      "collect_timing": true,
+      "pipeline_enforces_input_signature": true,
+      "prefer_small_models": true,
+      "progress_interval": 1000,
+      "small_model_bound": 100
+    },
+    "z3_available": true
+  },
+  "image_archive_sha256": "e9a7391d567e52b4d05a800ecb73048dca219bf6b8c3e7fe7327dce70ba1895c",
+  "settings": {
+    "max_passes": 3,
+    "compiler_flags": [
+      "-std=c11"
+    ],
+    "selection": "all functions; all represented complete exit objectives",
+    "semantics": "mathematical-integers"
+  },
+  "execution_verified": false,
+  "sources": [
+    {
+      "source": "examples/thesis/20261001_case_study_2_motor_control_TU_Wien.c",
+      "source_sha256": "297fcf5883f90b23c3c9f02e5c04da49e4c0c04b5287bb5931a2387e1fa664bd",
+      "directory": "20261001_case_study_2_motor_control_TU_Wien",
+      "functions": [
+        "motor_control"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/20261001_case_study_2_motor_control_TU_Wien.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/20261001_case_study_2_motor_control_TU_Wien",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/20261001_case_study_3_charging_control_TU_Wien.c",
+      "source_sha256": "5c8c80704e32002cc610a62c495b1bada8dee83a28e177209c0712c99517ec7a",
+      "directory": "20261001_case_study_3_charging_control_TU_Wien",
+      "functions": [
+        "charging_control"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/20261001_case_study_3_charging_control_TU_Wien.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/20261001_case_study_3_charging_control_TU_Wien",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/loop_while.c",
+      "source_sha256": "835e92f718a74fcad267337b1d136db26b4cb81089c463b061f048a6eca093f4",
+      "directory": "loop_while",
+      "functions": [
+        "loop_while"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/loop_while.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/loop_while",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/loop_with_branch.c",
+      "source_sha256": "5fe7e856dcf1cad4767fbd6fe53fec5b15ee55f1247ed0b88427f51adc429c01",
+      "directory": "loop_with_branch",
+      "functions": [
+        "loop_with_branch"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/loop_with_branch.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/loop_with_branch",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/nested_if.c",
+      "source_sha256": "530c92e471c4e9f16332a0840921596826f80b8066f95d270064e2beb927bad9",
+      "directory": "nested_if",
+      "functions": [
+        "nested_if"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/nested_if.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/nested_if",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/sensor_fusion_step.c",
+      "source_sha256": "e46ca2f2580ec54a7bbade7d6e3ad3000e2b7a5a439bed5368ea0575b22ee3c4",
+      "directory": "sensor_fusion_step",
+      "functions": [
+        "sensor_fusion_step"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/sensor_fusion_step.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/sensor_fusion_step",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/short_circuit.c",
+      "source_sha256": "39e098ee14ea2fda2d34dea4b7c740a9e49086c5ad91389e12c99079c68a3d3a",
+      "directory": "short_circuit",
+      "functions": [
+        "short_circuit_or",
+        "short_circuit_and",
+        "short_circuit_mixed",
+        "short_circuit_substitution",
+        "short_circuit_scalar",
+        "short_circuit_contradiction",
+        "short_circuit_true_or",
+        "short_circuit_false_and",
+        "short_circuit_while",
+        "short_circuit_for",
+        "short_circuit_arithmetic_contradiction",
+        "short_circuit_or_empty",
+        "short_circuit_and_empty"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/short_circuit.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/short_circuit",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    },
+    {
+      "source": "examples/thesis/simple_if.c",
+      "source_sha256": "fc53cfae213bc9e23ccf263c43cabdfe27d86cc06b7099e88c51dd515b9ead92",
+      "directory": "simple_if",
+      "functions": [
+        "simple_if"
+      ],
+      "status": "complete",
+      "container_arguments": [
+        "/input/thesis/simple_if.c",
+        "--max-passes=3",
+        "--report-dir=/reports",
+        "--",
+        "-std=c11"
+      ],
+      "mounts": [
+        {
+          "source": "examples",
+          "target": "/input",
+          "readonly": true
+        },
+        {
+          "source": "reference-reports/simple_if",
+          "target": "/reports"
+        }
+      ],
+      "returncode": 0
+    }
+  ],
+  "source_count": 8,
+  "function_count": 20,
+  "report_count": 100
+}

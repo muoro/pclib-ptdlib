@@ -1,0 +1,92 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "a": "11",
+        "b": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6F",
+      "predicate": "(not((a <= 10)))",
+      "solve_time_ms": 8.9246770000000009,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "10",
+        "b": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5F.B6F",
+      "predicate": "((a <= 10)) and (not((b > a))) and (not(((a + 1) <= 10)))",
+      "solve_time_ms": 8.3235460000000003,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "9",
+        "b": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5F.B6T.B5F.B6F",
+      "predicate": "((a <= 10)) and (not((b > a))) and (((a + 1) <= 10)) and (not(((b + 1) > (a + 1)))) and (not((((a + 1) + 1) <= 10)))",
+      "solve_time_ms": 3.2448329999999999,
+      "status": "sat"
+    },
+    {
+      "model_validated": false,
+      "path_label": "B6T.B5F.B6T.B5T.B6F",
+      "predicate": "((a <= 10)) and (not((b > a))) and (((a + 1) <= 10)) and (((b + 1) > (a + 1))) and (not((((a + 1) + 1) <= 10)))",
+      "solve_time_ms": 5.9937719999999999,
+      "status": "unsat"
+    },
+    {
+      "model": {
+        "a": "10",
+        "b": "11"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B6F",
+      "predicate": "((a <= 10)) and ((b > a)) and (not(((a + 1) <= 10)))",
+      "solve_time_ms": 2.2737409999999998,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "9",
+        "b": "10"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B6T.B5F.B6F",
+      "predicate": "((a <= 10)) and ((b > a)) and (((a + 1) <= 10)) and (not(((b - 1) > (a + 1)))) and (not((((a + 1) + 1) <= 10)))",
+      "solve_time_ms": 3.3109999999999999,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "9",
+        "b": "12"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B6T.B5T.B6F",
+      "predicate": "((a <= 10)) and ((b > a)) and (((a + 1) <= 10)) and (((b - 1) > (a + 1))) and (not((((a + 1) + 1) <= 10)))",
+      "solve_time_ms": 3.5074149999999999,
+      "status": "sat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 6,
+    "total_paths": 7,
+    "total_solve_time_ms": 35.620345999999998,
+    "unknown": 0,
+    "unsat": 1,
+    "unsupported": 0
+  }
+}

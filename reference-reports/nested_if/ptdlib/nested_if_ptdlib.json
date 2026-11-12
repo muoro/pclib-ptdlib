@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "total_tests": 5,
+    "total_objectives": 6,
+    "objectives_with_tests": 5
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "9b90ea98984dc28aff8b369e3403deac139461b092346530e8dbd711f36873a9"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "nested_if",
+    "inputs": [
+      {
+        "name": "a",
+        "type": "int32"
+      },
+      {
+        "name": "b",
+        "type": "int32"
+      },
+      {
+        "name": "c",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B6F.B2F",
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 1
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B6F.B2T",
+      "inputs": {
+        "a": 0,
+        "b": 0,
+        "c": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B6T.B5F.B2F",
+      "inputs": {
+        "a": 0,
+        "b": 2,
+        "c": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B6T.B5F.B2T",
+      "inputs": {
+        "a": 0,
+        "b": 2,
+        "c": -1
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B6T.B5T.B2F",
+      "inputs": {
+        "a": 0,
+        "b": 2,
+        "c": 5
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B6F.B2F",
+      "status": "sat",
+      "predicate": "(not(((a + 1) < b))) and (not((c < (a + 1))))",
+      "model_validated": true,
+      "solve_time_ms": 9.1063150000000004
+    },
+    {
+      "path_label": "B6F.B2T",
+      "status": "sat",
+      "predicate": "(not(((a + 1) < b))) and ((c < (a + 1)))",
+      "model_validated": true,
+      "solve_time_ms": 6.658315
+    },
+    {
+      "path_label": "B6T.B5F.B2F",
+      "status": "sat",
+      "predicate": "(((a + 1) < b)) and (not(((b + 2) < c))) and (not(((c + 1) < (a + 1))))",
+      "model_validated": true,
+      "solve_time_ms": 3.192161
+    },
+    {
+      "path_label": "B6T.B5F.B2T",
+      "status": "sat",
+      "predicate": "(((a + 1) < b)) and (not(((b + 2) < c))) and (((c + 1) < (a + 1)))",
+      "model_validated": true,
+      "solve_time_ms": 3.5787409999999999
+    },
+    {
+      "path_label": "B6T.B5T.B2F",
+      "status": "sat",
+      "predicate": "(((a + 1) < b)) and (((b + 2) < c)) and (not(((c - 1) < (a + 1))))",
+      "model_validated": true,
+      "solve_time_ms": 3.3155809999999999
+    },
+    {
+      "path_label": "B6T.B5T.B2T",
+      "status": "unsat",
+      "predicate": "(((a + 1) < b)) and (((b + 2) < c)) and (((c - 1) < (a + 1)))",
+      "model_validated": false,
+      "solve_time_ms": 5.4335019999999998
+    }
+  ]
+}

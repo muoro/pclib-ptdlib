@@ -1,0 +1,16 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "simple_if",
+  "path_conditions": [
+    {
+      "path_label": "B3F",
+      "predicate": "(not(((x * 2) > y)))"
+    },
+    {
+      "path_label": "B3T",
+      "predicate": "(((x * 2) > y))"
+    }
+  ],
+  "total_paths": 2
+}

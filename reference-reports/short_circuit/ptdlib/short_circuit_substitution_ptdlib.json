@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "total_tests": 3,
+    "total_objectives": 3,
+    "objectives_with_tests": 3
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "6ba46b8941682677d5817c0fe9a796361f0c5b9b457ff158c97e0ceb67a47054"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "short_circuit_substitution",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "name": "y",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B4F.B3F",
+      "inputs": {
+        "x": -1,
+        "y": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B4F.B3T",
+      "inputs": {
+        "x": -4,
+        "y": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B4T",
+      "inputs": {
+        "x": 0,
+        "y": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B4F.B3F",
+      "status": "sat",
+      "predicate": "(not(((x + 1) > 0))) and (not(((y - 2) > (x + 1))))",
+      "model_validated": true,
+      "solve_time_ms": 1.9201490000000001
+    },
+    {
+      "path_label": "B4F.B3T",
+      "status": "sat",
+      "predicate": "(not(((x + 1) > 0))) and (((y - 2) > (x + 1)))",
+      "model_validated": true,
+      "solve_time_ms": 1.8379369999999999
+    },
+    {
+      "path_label": "B4T",
+      "status": "sat",
+      "predicate": "(((x + 1) > 0))",
+      "model_validated": true,
+      "solve_time_ms": 1.3218730000000001
+    }
+  ]
+}

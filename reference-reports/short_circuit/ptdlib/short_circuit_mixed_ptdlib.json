@@ -1,0 +1,131 @@
+{
+  "summary": {
+    "total_tests": 5,
+    "total_objectives": 5,
+    "objectives_with_tests": 5
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "615aa8d1c51fe6e21b0ecbcf542979f624f5396398c64fec5718f491b74ac7ea"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "short_circuit_mixed",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "name": "y",
+        "type": "int32"
+      },
+      {
+        "name": "z",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B5F.B4F",
+      "inputs": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B5F.B4T.B3F",
+      "inputs": {
+        "x": 0,
+        "y": 6,
+        "z": 3
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B5F.B4T.B3T",
+      "inputs": {
+        "x": 0,
+        "y": 6,
+        "z": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B5T.B3F",
+      "inputs": {
+        "x": 1,
+        "y": 0,
+        "z": 3
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B5T.B3T",
+      "inputs": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B5F.B4F",
+      "status": "sat",
+      "predicate": "(not((x > 0))) and (not((y > 5)))",
+      "model_validated": true,
+      "solve_time_ms": 1.7013769999999999
+    },
+    {
+      "path_label": "B5F.B4T.B3F",
+      "status": "sat",
+      "predicate": "(not((x > 0))) and ((y > 5)) and (not((z < 3)))",
+      "model_validated": true,
+      "solve_time_ms": 1.9021440000000001
+    },
+    {
+      "path_label": "B5F.B4T.B3T",
+      "status": "sat",
+      "predicate": "(not((x > 0))) and ((y > 5)) and ((z < 3))",
+      "model_validated": true,
+      "solve_time_ms": 1.8585529999999999
+    },
+    {
+      "path_label": "B5T.B3F",
+      "status": "sat",
+      "predicate": "((x > 0)) and (not((z < 3)))",
+      "model_validated": true,
+      "solve_time_ms": 1.3547579999999999
+    },
+    {
+      "path_label": "B5T.B3T",
+      "status": "sat",
+      "predicate": "((x > 0)) and ((z < 3))",
+      "model_validated": true,
+      "solve_time_ms": 1.329682
+    }
+  ]
+}

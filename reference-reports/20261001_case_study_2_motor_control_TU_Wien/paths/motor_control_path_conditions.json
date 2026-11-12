@@ -1,0 +1,40 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "motor_control",
+  "path_conditions": [
+    {
+      "path_label": "B14F.B13F.B11F.B7F.B3F",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (not(((target_speed - actual_speed) < -20))) and (not((motor_current > 100)))"
+    },
+    {
+      "path_label": "B14F.B13F.B11F.B7F.B3T",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (not(((target_speed - actual_speed) < -20))) and ((motor_current > 100))"
+    },
+    {
+      "path_label": "B14F.B13F.B11F.B7T.B6F",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (((target_speed - actual_speed) < -20)) and (not((motor_current > 10)))"
+    },
+    {
+      "path_label": "B14F.B13F.B11F.B7T.B6T",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (((target_speed - actual_speed) < -20)) and ((motor_current > 10))"
+    },
+    {
+      "path_label": "B14F.B13F.B11T.B10F",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (((target_speed - actual_speed) > 20)) and (not((motor_current < 100)))"
+    },
+    {
+      "path_label": "B14F.B13F.B11T.B10T",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (((target_speed - actual_speed) > 20)) and ((motor_current < 100))"
+    },
+    {
+      "path_label": "B14F.B13T",
+      "predicate": "(not((fault != 0))) and ((temperature > 80))"
+    },
+    {
+      "path_label": "B14T",
+      "predicate": "((fault != 0))"
+    }
+  ],
+  "total_paths": 8
+}

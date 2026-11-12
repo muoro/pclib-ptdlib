@@ -1,0 +1,131 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "actual_speed": "0",
+        "fault": "0",
+        "motor_current": "0",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13F.B11F.B7F.B3F",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (not(((target_speed - actual_speed) < -20))) and (not((motor_current > 100)))",
+      "solve_time_ms": 40.776954000000003,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "0",
+        "fault": "0",
+        "motor_current": "101",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13F.B11F.B7F.B3T",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (not(((target_speed - actual_speed) < -20))) and ((motor_current > 100))",
+      "solve_time_ms": 15.078211,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "21",
+        "fault": "0",
+        "motor_current": "0",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13F.B11F.B7T.B6F",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (((target_speed - actual_speed) < -20)) and (not((motor_current > 10)))",
+      "solve_time_ms": 2.8350559999999998,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "21",
+        "fault": "0",
+        "motor_current": "11",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13F.B11F.B7T.B6T",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (((target_speed - actual_speed) < -20)) and ((motor_current > 10))",
+      "solve_time_ms": 2.6630039999999999,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "-21",
+        "fault": "0",
+        "motor_current": "100",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13F.B11T.B10F",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (((target_speed - actual_speed) > 20)) and (not((motor_current < 100)))",
+      "solve_time_ms": 2.2456999999999998,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "-21",
+        "fault": "0",
+        "motor_current": "0",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13F.B11T.B10T",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (((target_speed - actual_speed) > 20)) and ((motor_current < 100))",
+      "solve_time_ms": 2.4661460000000002,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "0",
+        "fault": "0",
+        "motor_current": "0",
+        "target_speed": "0",
+        "temperature": "81"
+      },
+      "model_validated": true,
+      "path_label": "B14F.B13T",
+      "predicate": "(not((fault != 0))) and ((temperature > 80))",
+      "solve_time_ms": 1.4252990000000001,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "actual_speed": "0",
+        "fault": "1",
+        "motor_current": "0",
+        "target_speed": "0",
+        "temperature": "0"
+      },
+      "model_validated": true,
+      "path_label": "B14T",
+      "predicate": "((fault != 0))",
+      "solve_time_ms": 1.0669249999999999,
+      "status": "sat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 8,
+    "total_paths": 8,
+    "total_solve_time_ms": 68.595935999999995,
+    "unknown": 0,
+    "unsat": 0,
+    "unsupported": 0
+  }
+}

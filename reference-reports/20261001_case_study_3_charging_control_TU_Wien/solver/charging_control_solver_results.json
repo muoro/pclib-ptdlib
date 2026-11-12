@@ -1,0 +1,136 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "charge_level": "20",
+        "current": "0",
+        "temperature": "0",
+        "voltage": "3600"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3F",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and (not((current > 1000))) and (not((charge_level < 20)))",
+      "solve_time_ms": 19.745189,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "0",
+        "temperature": "0",
+        "voltage": "3600"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and (not((current > 1000))) and ((charge_level < 20))",
+      "solve_time_ms": 7.4038539999999999,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "1001",
+        "temperature": "0",
+        "voltage": "3600"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and ((current > 1000))",
+      "solve_time_ms": 6.5554110000000003,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "500",
+        "temperature": "0",
+        "voltage": "0"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8F",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and ((voltage < 3600)) and (not((current < 500)))",
+      "solve_time_ms": 6.1670400000000001,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "0",
+        "temperature": "0",
+        "voltage": "0"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and ((voltage < 3600)) and ((current < 500))",
+      "solve_time_ms": 3.0278290000000001,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "95",
+        "current": "0",
+        "temperature": "0",
+        "voltage": "0"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13F.B11T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and ((charge_level >= 95))",
+      "solve_time_ms": 2.3231470000000001,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "0",
+        "temperature": "0",
+        "voltage": "4201"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15F.B13T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and ((voltage > 4200))",
+      "solve_time_ms": 3.422326,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "0",
+        "temperature": "46",
+        "voltage": "0"
+      },
+      "model_validated": true,
+      "path_label": "B16F.B15T",
+      "predicate": "(not((temperature < 0))) and ((temperature > 45))",
+      "solve_time_ms": 1.282184,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "charge_level": "0",
+        "current": "0",
+        "temperature": "-1",
+        "voltage": "0"
+      },
+      "model_validated": true,
+      "path_label": "B16T",
+      "predicate": "((temperature < 0))",
+      "solve_time_ms": 0.85212399999999999,
+      "status": "sat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 9,
+    "total_paths": 9,
+    "total_solve_time_ms": 50.821533000000002,
+    "unknown": 0,
+    "unsat": 0,
+    "unsupported": 0
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "summary": {
+    "total_tests": 9,
+    "total_objectives": 9,
+    "objectives_with_tests": 9
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "714f77257fc4c10d7f135bfb0c418e80b99f17522cb48a5e4e02227335171397"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "charging_control",
+    "inputs": [
+      {
+        "name": "voltage",
+        "type": "int32"
+      },
+      {
+        "name": "current",
+        "type": "int32"
+      },
+      {
+        "name": "temperature",
+        "type": "int32"
+      },
+      {
+        "name": "charge_level",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3F",
+      "inputs": {
+        "charge_level": 20,
+        "current": 0,
+        "temperature": 0,
+        "voltage": 3600
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3T",
+      "inputs": {
+        "charge_level": 0,
+        "current": 0,
+        "temperature": 0,
+        "voltage": 3600
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5T",
+      "inputs": {
+        "charge_level": 0,
+        "current": 1001,
+        "temperature": 0,
+        "voltage": 3600
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8F",
+      "inputs": {
+        "charge_level": 0,
+        "current": 500,
+        "temperature": 0,
+        "voltage": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8T",
+      "inputs": {
+        "charge_level": 0,
+        "current": 0,
+        "temperature": 0,
+        "voltage": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t6",
+      "path_label": "B16F.B15F.B13F.B11T",
+      "inputs": {
+        "charge_level": 95,
+        "current": 0,
+        "temperature": 0,
+        "voltage": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t7",
+      "path_label": "B16F.B15F.B13T",
+      "inputs": {
+        "charge_level": 0,
+        "current": 0,
+        "temperature": 0,
+        "voltage": 4201
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t8",
+      "path_label": "B16F.B15T",
+      "inputs": {
+        "charge_level": 0,
+        "current": 0,
+        "temperature": 46,
+        "voltage": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t9",
+      "path_label": "B16T",
+      "inputs": {
+        "charge_level": 0,
+        "current": 0,
+        "temperature": -1,
+        "voltage": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3F",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and (not((current > 1000))) and (not((charge_level < 20)))",
+      "model_validated": true,
+      "solve_time_ms": 19.745189
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3T",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and (not((current > 1000))) and ((charge_level < 20))",
+      "model_validated": true,
+      "solve_time_ms": 7.4038539999999999
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5T",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and ((current > 1000))",
+      "model_validated": true,
+      "solve_time_ms": 6.5554110000000003
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8F",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and ((voltage < 3600)) and (not((current < 500)))",
+      "model_validated": true,
+      "solve_time_ms": 6.1670400000000001
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8T",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and ((voltage < 3600)) and ((current < 500))",
+      "model_validated": true,
+      "solve_time_ms": 3.0278290000000001
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11T",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and ((charge_level >= 95))",
+      "model_validated": true,
+      "solve_time_ms": 2.3231470000000001
+    },
+    {
+      "path_label": "B16F.B15F.B13T",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and ((voltage > 4200))",
+      "model_validated": true,
+      "solve_time_ms": 3.422326
+    },
+    {
+      "path_label": "B16F.B15T",
+      "status": "sat",
+      "predicate": "(not((temperature < 0))) and ((temperature > 45))",
+      "model_validated": true,
+      "solve_time_ms": 1.282184
+    },
+    {
+      "path_label": "B16T",
+      "status": "sat",
+      "predicate": "((temperature < 0))",
+      "model_validated": true,
+      "solve_time_ms": 0.85212399999999999
+    }
+  ]
+}

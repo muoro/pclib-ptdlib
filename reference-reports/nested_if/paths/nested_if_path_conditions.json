@@ -1,0 +1,32 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "nested_if",
+  "path_conditions": [
+    {
+      "path_label": "B6F.B2F",
+      "predicate": "(not(((a + 1) < b))) and (not((c < (a + 1))))"
+    },
+    {
+      "path_label": "B6F.B2T",
+      "predicate": "(not(((a + 1) < b))) and ((c < (a + 1)))"
+    },
+    {
+      "path_label": "B6T.B5F.B2F",
+      "predicate": "(((a + 1) < b)) and (not(((b + 2) < c))) and (not(((c + 1) < (a + 1))))"
+    },
+    {
+      "path_label": "B6T.B5F.B2T",
+      "predicate": "(((a + 1) < b)) and (not(((b + 2) < c))) and (((c + 1) < (a + 1)))"
+    },
+    {
+      "path_label": "B6T.B5T.B2F",
+      "predicate": "(((a + 1) < b)) and (((b + 2) < c)) and (not(((c - 1) < (a + 1))))"
+    },
+    {
+      "path_label": "B6T.B5T.B2T",
+      "predicate": "(((a + 1) < b)) and (((b + 2) < c)) and (((c - 1) < (a + 1)))"
+    }
+  ],
+  "total_paths": 6
+}

@@ -1,0 +1,20 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "short_circuit_and",
+  "path_conditions": [
+    {
+      "path_label": "B4F",
+      "predicate": "(not((x > 0)))"
+    },
+    {
+      "path_label": "B4T.B3F",
+      "predicate": "((x > 0)) and (not((y > 5)))"
+    },
+    {
+      "path_label": "B4T.B3T",
+      "predicate": "((x > 0)) and ((y > 5))"
+    }
+  ],
+  "total_paths": 3
+}

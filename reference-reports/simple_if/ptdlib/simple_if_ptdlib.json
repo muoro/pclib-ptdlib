@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "total_tests": 2,
+    "total_objectives": 2,
+    "objectives_with_tests": 2
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "4994fc1c5891550d5c805a9414abb5bdc02f4a074c149e138cad9b7772cbb0c7"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "simple_if",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "name": "y",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B3F",
+      "inputs": {
+        "x": 0,
+        "y": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B3T",
+      "inputs": {
+        "x": 0,
+        "y": -1
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B3F",
+      "status": "sat",
+      "predicate": "(not(((x * 2) > y)))",
+      "model_validated": true,
+      "solve_time_ms": 7.8577919999999999
+    },
+    {
+      "path_label": "B3T",
+      "status": "sat",
+      "predicate": "(((x * 2) > y))",
+      "model_validated": true,
+      "solve_time_ms": 5.4306520000000003
+    }
+  ]
+}

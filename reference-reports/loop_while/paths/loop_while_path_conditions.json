@@ -1,0 +1,20 @@
+{
+  "analysis_passes": 3,
+  "configured_max_passes": 3,
+  "function": "loop_while",
+  "path_conditions": [
+    {
+      "path_label": "B3F",
+      "predicate": "(not((a <= 10)))"
+    },
+    {
+      "path_label": "B3T.B3F",
+      "predicate": "((a <= 10)) and (not(((a + 1) <= 10)))"
+    },
+    {
+      "path_label": "B3T.B3T.B3F",
+      "predicate": "((a <= 10)) and (((a + 1) <= 10)) and (not((((a + 1) + 1) <= 10)))"
+    }
+  ],
+  "total_paths": 3
+}

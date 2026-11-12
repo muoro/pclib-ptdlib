@@ -1,0 +1,212 @@
+{
+  "summary": {
+    "total_tests": 8,
+    "total_objectives": 8,
+    "objectives_with_tests": 8
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "125cc960de09f359f1769e38da4d176661d1a1b76b22467df64b2a51eeaeb41f"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "motor_control",
+    "inputs": [
+      {
+        "name": "target_speed",
+        "type": "int32"
+      },
+      {
+        "name": "actual_speed",
+        "type": "int32"
+      },
+      {
+        "name": "motor_current",
+        "type": "int32"
+      },
+      {
+        "name": "temperature",
+        "type": "int32"
+      },
+      {
+        "name": "fault",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B14F.B13F.B11F.B7F.B3F",
+      "inputs": {
+        "actual_speed": 0,
+        "fault": 0,
+        "motor_current": 0,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B14F.B13F.B11F.B7F.B3T",
+      "inputs": {
+        "actual_speed": 0,
+        "fault": 0,
+        "motor_current": 101,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B14F.B13F.B11F.B7T.B6F",
+      "inputs": {
+        "actual_speed": 21,
+        "fault": 0,
+        "motor_current": 0,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B14F.B13F.B11F.B7T.B6T",
+      "inputs": {
+        "actual_speed": 21,
+        "fault": 0,
+        "motor_current": 11,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B14F.B13F.B11T.B10F",
+      "inputs": {
+        "actual_speed": -21,
+        "fault": 0,
+        "motor_current": 100,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t6",
+      "path_label": "B14F.B13F.B11T.B10T",
+      "inputs": {
+        "actual_speed": -21,
+        "fault": 0,
+        "motor_current": 0,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t7",
+      "path_label": "B14F.B13T",
+      "inputs": {
+        "actual_speed": 0,
+        "fault": 0,
+        "motor_current": 0,
+        "target_speed": 0,
+        "temperature": 81
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t8",
+      "path_label": "B14T",
+      "inputs": {
+        "actual_speed": 0,
+        "fault": 1,
+        "motor_current": 0,
+        "target_speed": 0,
+        "temperature": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B14F.B13F.B11F.B7F.B3F",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (not(((target_speed - actual_speed) < -20))) and (not((motor_current > 100)))",
+      "model_validated": true,
+      "solve_time_ms": 40.776954000000003
+    },
+    {
+      "path_label": "B14F.B13F.B11F.B7F.B3T",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (not(((target_speed - actual_speed) < -20))) and ((motor_current > 100))",
+      "model_validated": true,
+      "solve_time_ms": 15.078211
+    },
+    {
+      "path_label": "B14F.B13F.B11F.B7T.B6F",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (((target_speed - actual_speed) < -20)) and (not((motor_current > 10)))",
+      "model_validated": true,
+      "solve_time_ms": 2.8350559999999998
+    },
+    {
+      "path_label": "B14F.B13F.B11F.B7T.B6T",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (not(((target_speed - actual_speed) > 20))) and (((target_speed - actual_speed) < -20)) and ((motor_current > 10))",
+      "model_validated": true,
+      "solve_time_ms": 2.6630039999999999
+    },
+    {
+      "path_label": "B14F.B13F.B11T.B10F",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (((target_speed - actual_speed) > 20)) and (not((motor_current < 100)))",
+      "model_validated": true,
+      "solve_time_ms": 2.2456999999999998
+    },
+    {
+      "path_label": "B14F.B13F.B11T.B10T",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and (not((temperature > 80))) and (((target_speed - actual_speed) > 20)) and ((motor_current < 100))",
+      "model_validated": true,
+      "solve_time_ms": 2.4661460000000002
+    },
+    {
+      "path_label": "B14F.B13T",
+      "status": "sat",
+      "predicate": "(not((fault != 0))) and ((temperature > 80))",
+      "model_validated": true,
+      "solve_time_ms": 1.4252990000000001
+    },
+    {
+      "path_label": "B14T",
+      "status": "sat",
+      "predicate": "((fault != 0))",
+      "model_validated": true,
+      "solve_time_ms": 1.0669249999999999
+    }
+  ]
+}

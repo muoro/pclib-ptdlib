@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "total_nodes": 13,
+    "complete_paths": 6,
+    "stored_predicates": 6
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "dd562a9f220890234b7d18e14793a7b402c912f8039301251905330f6eef599a",
+    "source_sha256": "39e098ee14ea2fda2d34dea4b7c740a9e49086c5ad91389e12c99079c68a3d3a"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 3
+    }
+  },
+  "function": {
+    "name": "short_circuit_while",
+    "inputs": [
+      {
+        "name": "n",
+        "type": "int32"
+      },
+      {
+        "name": "stop",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B5F",
+      "parent": "",
+      "endpoint": "exit",
+      "negated_from": "B5T"
+    },
+    {
+      "label": "B5T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "(n > 0)"
+    },
+    {
+      "label": "B5T.B4F",
+      "parent": "B5T",
+      "endpoint": "exit",
+      "negated_from": "B5T.B4T"
+    },
+    {
+      "label": "B5T.B4T",
+      "parent": "B5T",
+      "endpoint": "prefix",
+      "edge_condition": "(stop == 0)"
+    },
+    {
+      "label": "B5T.B4T.B5F",
+      "parent": "B5T.B4T",
+      "endpoint": "exit",
+      "negated_from": "B5T.B4T.B5T"
+    },
+    {
+      "label": "B5T.B4T.B5T",
+      "parent": "B5T.B4T",
+      "endpoint": "prefix",
+      "edge_condition": "((n - 1) > 0)"
+    },
+    {
+      "label": "B5T.B4T.B5T.B4F",
+      "parent": "B5T.B4T.B5T",
+      "endpoint": "exit",
+      "negated_from": "B5T.B4T.B5T.B4T"
+    },
+    {
+      "label": "B5T.B4T.B5T.B4T",
+      "parent": "B5T.B4T.B5T",
+      "endpoint": "prefix",
+      "edge_condition": "(stop == 0)"
+    },
+    {
+      "label": "B5T.B4T.B5T.B4T.B5F",
+      "parent": "B5T.B4T.B5T.B4T",
+      "endpoint": "exit",
+      "negated_from": "B5T.B4T.B5T.B4T.B5T"
+    },
+    {
+      "label": "B5T.B4T.B5T.B4T.B5T",
+      "parent": "B5T.B4T.B5T.B4T",
+      "endpoint": "prefix",
+      "edge_condition": "(((n - 1) - 1) > 0)"
+    },
+    {
+      "label": "B5T.B4T.B5T.B4T.B5T.B4F",
+      "parent": "B5T.B4T.B5T.B4T.B5T",
+      "endpoint": "exit",
+      "negated_from": "B5T.B4T.B5T.B4T.B5T.B4T"
+    },
+    {
+      "label": "B5T.B4T.B5T.B4T.B5T.B4T",
+      "parent": "B5T.B4T.B5T.B4T.B5T",
+      "endpoint": "cutoff",
+      "edge_condition": "(stop == 0)"
+    }
+  ]
+}

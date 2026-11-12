@@ -1,0 +1,5 @@
+# Keep shell scripts and source files usable in Linux/WSL after Windows checkout.
+* text=auto eol=lf
+
+# Downloadable Docker archives must remain byte-for-byte unchanged in Git.
+docker-image/*.tar.gz binary -eol

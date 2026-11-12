@@ -1,0 +1,30 @@
+# CMake builds and generated analysis/experiment results
+build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+Makefile
+cmake_install.cmake
+Testing/
+reports/
+*_cfg_analysis.json
+CFG-*.dot
+CFG-*.png
+
+# Keep the deliberately saved example snapshot, including its CFG reports.
+!/reference-reports/**/*_cfg_analysis.json
+
+# Editor and local tooling state
+.cache/
+.vscode/
+.codex/
+*.idx
+*.swp
+*~
+.DS_Store
+*:Zone.Identifier
+
+# Python bytecode
+__pycache__/
+*.py[cod]

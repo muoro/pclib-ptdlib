@@ -1,0 +1,427 @@
+{
+  "cfg_analysis_results": {
+    "blocks": [
+      {
+        "block_id": 0,
+        "block_name": "B0",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 1,
+        "block_name": "B1",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 2,
+        "block_name": "B2",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B6T",
+            "path_label": "B6F"
+          },
+          {
+            "path_label": "B6T",
+            "predicate": "((n - 1) > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T",
+            "path_label": "B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T",
+            "path_label": "B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T",
+            "predicate": "(((n - 1) - 1) > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "(((n - 1) - 1) == 2)"
+          },
+          {
+            "path_label": "B6T.B5T.B4T",
+            "predicate": "((n - 1) == 2)"
+          }
+        ],
+        "successors": [
+          6
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 3,
+        "block_name": "B3",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 4,
+        "block_name": "B4",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B4T",
+            "path_label": "B4F"
+          },
+          {
+            "negated_from": "B4F.B6T",
+            "path_label": "B4F.B6F"
+          },
+          {
+            "path_label": "B4F.B6T",
+            "predicate": "((n - 1) > 0)"
+          },
+          {
+            "negated_from": "B4F.B6T.B5T",
+            "path_label": "B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B4F.B6T.B5T.B4T",
+            "path_label": "B4F.B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B4F.B6T.B5T.B4F.B6T",
+            "path_label": "B4F.B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B4F.B6T.B5T.B4F.B6T",
+            "predicate": "(((n - 1) - 1) > 0)"
+          },
+          {
+            "negated_from": "B4F.B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B4F.B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B4F.B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B4F.B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "path_label": "B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "(((n - 1) - 1) == 2)"
+          },
+          {
+            "path_label": "B4F.B6T.B5T.B4T",
+            "predicate": "((n - 1) == 2)"
+          },
+          {
+            "path_label": "B4T",
+            "predicate": "(n == 2)"
+          }
+        ],
+        "successors": [
+          3,
+          2
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 5,
+        "block_name": "B5",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B5T",
+            "path_label": "B5F"
+          },
+          {
+            "path_label": "B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B5T.B4T",
+            "path_label": "B5T.B4F"
+          },
+          {
+            "negated_from": "B5T.B4F.B6T",
+            "path_label": "B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B5T.B4F.B6T",
+            "predicate": "((n - 1) > 0)"
+          },
+          {
+            "negated_from": "B5T.B4F.B6T.B5T",
+            "path_label": "B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B5T.B4F.B6T.B5T.B4F.B6T",
+            "path_label": "B5T.B4F.B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B5T.B4F.B6T.B5T.B4F.B6T",
+            "predicate": "(((n - 1) - 1) > 0)"
+          },
+          {
+            "negated_from": "B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B5T.B4F.B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "path_label": "B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "(((n - 1) - 1) == 2)"
+          },
+          {
+            "path_label": "B5T.B4F.B6T.B5T.B4T",
+            "predicate": "((n - 1) == 2)"
+          },
+          {
+            "path_label": "B5T.B4T",
+            "predicate": "(n == 2)"
+          }
+        ],
+        "successors": [
+          4,
+          1
+        ],
+        "terminator_type": "for"
+      },
+      {
+        "block_id": 6,
+        "block_name": "B6",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B6T",
+            "path_label": "B6F"
+          },
+          {
+            "path_label": "B6T",
+            "predicate": "(n > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T",
+            "path_label": "B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T",
+            "path_label": "B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T",
+            "predicate": "((n - 1) > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+            "predicate": "(((n - 1) - 1) > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "(((n - 1) - 1) == 2)"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "((n - 1) == 2)"
+          },
+          {
+            "path_label": "B6T.B5T.B4T",
+            "predicate": "(n == 2)"
+          }
+        ],
+        "successors": [
+          5,
+          1
+        ],
+        "terminator_type": "other"
+      },
+      {
+        "block_id": 7,
+        "block_name": "B7",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B6T",
+            "path_label": "B6F"
+          },
+          {
+            "path_label": "B6T",
+            "predicate": "(n > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T",
+            "path_label": "B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T",
+            "path_label": "B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T",
+            "predicate": "((n - 1) > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+            "predicate": "(((n - 1) - 1) > 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+            "predicate": "(stop == 0)"
+          },
+          {
+            "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4F"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "(((n - 1) - 1) == 2)"
+          },
+          {
+            "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+            "predicate": "((n - 1) == 2)"
+          },
+          {
+            "path_label": "B6T.B5T.B4T",
+            "predicate": "(n == 2)"
+          }
+        ],
+        "successors": [
+          6
+        ],
+        "terminator_type": "none"
+      }
+    ],
+    "entry_block_id": 7,
+    "false_edges": "negated_from",
+    "representation": "incremental-edge-constraints",
+    "total_blocks": 8
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "a": "0",
+        "b": "0",
+        "c": "1"
+      },
+      "model_validated": true,
+      "path_label": "B6F.B2F",
+      "predicate": "(not(((a + 1) < b))) and (not((c < (a + 1))))",
+      "solve_time_ms": 9.1063150000000004,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "0",
+        "b": "0",
+        "c": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6F.B2T",
+      "predicate": "(not(((a + 1) < b))) and ((c < (a + 1)))",
+      "solve_time_ms": 6.658315,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "0",
+        "b": "2",
+        "c": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5F.B2F",
+      "predicate": "(((a + 1) < b)) and (not(((b + 2) < c))) and (not(((c + 1) < (a + 1))))",
+      "solve_time_ms": 3.192161,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "0",
+        "b": "2",
+        "c": "-1"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5F.B2T",
+      "predicate": "(((a + 1) < b)) and (not(((b + 2) < c))) and (((c + 1) < (a + 1)))",
+      "solve_time_ms": 3.5787409999999999,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "0",
+        "b": "2",
+        "c": "5"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B2F",
+      "predicate": "(((a + 1) < b)) and (((b + 2) < c)) and (not(((c - 1) < (a + 1))))",
+      "solve_time_ms": 3.3155809999999999,
+      "status": "sat"
+    },
+    {
+      "model_validated": false,
+      "path_label": "B6T.B5T.B2T",
+      "predicate": "(((a + 1) < b)) and (((b + 2) < c)) and (((c - 1) < (a + 1)))",
+      "solve_time_ms": 5.4335019999999998,
+      "status": "unsat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 5,
+    "total_paths": 6,
+    "total_solve_time_ms": 31.338875999999999,
+    "unknown": 0,
+    "unsat": 1,
+    "unsupported": 0
+  }
+}

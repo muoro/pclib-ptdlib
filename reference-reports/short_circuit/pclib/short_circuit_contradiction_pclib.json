@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "total_nodes": 5,
+    "complete_paths": 2,
+    "stored_predicates": 2
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "e3d265461157b8ba1a172a05b5c7dd54bb137dd103c0165354797d652a2ad73c",
+    "source_sha256": "39e098ee14ea2fda2d34dea4b7c740a9e49086c5ad91389e12c99079c68a3d3a"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 1
+    }
+  },
+  "function": {
+    "name": "short_circuit_contradiction",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B4F",
+      "parent": "",
+      "endpoint": "exit",
+      "negated_from": "B4T"
+    },
+    {
+      "label": "B4T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "(x > 0)"
+    },
+    {
+      "label": "B4T.B3F",
+      "parent": "B4T",
+      "endpoint": "exit",
+      "negated_from": "B4T.B3T"
+    },
+    {
+      "label": "B4T.B3T",
+      "parent": "B4T",
+      "endpoint": "cutoff",
+      "edge_condition": "(x < 0)"
+    }
+  ]
+}

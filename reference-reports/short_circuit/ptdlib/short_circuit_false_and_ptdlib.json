@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "total_tests": 1,
+    "total_objectives": 1,
+    "objectives_with_tests": 1
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "d1d2a3d5ca6a66b7381c3fcf6684471ab594102f23f9f792935e88954b7dade9"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "short_circuit_false_and",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B4F",
+      "inputs": {
+        "x": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B4F",
+      "status": "sat",
+      "predicate": "(not(((0) != 0)))",
+      "model_validated": true,
+      "solve_time_ms": 0.82418599999999997
+    }
+  ]
+}

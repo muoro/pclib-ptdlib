@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "total_nodes": 17,
+    "complete_paths": 9,
+    "stored_predicates": 8
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "714f77257fc4c10d7f135bfb0c418e80b99f17522cb48a5e4e02227335171397",
+    "source_sha256": "5c8c80704e32002cc610a62c495b1bada8dee83a28e177209c0712c99517ec7a"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 1
+    }
+  },
+  "function": {
+    "name": "charging_control",
+    "inputs": [
+      {
+        "name": "voltage",
+        "type": "int32"
+      },
+      {
+        "name": "current",
+        "type": "int32"
+      },
+      {
+        "name": "temperature",
+        "type": "int32"
+      },
+      {
+        "name": "charge_level",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B16F",
+      "parent": "",
+      "endpoint": "prefix",
+      "negated_from": "B16T"
+    },
+    {
+      "label": "B16F.B15F",
+      "parent": "B16F",
+      "endpoint": "prefix",
+      "negated_from": "B16F.B15T"
+    },
+    {
+      "label": "B16F.B15F.B13F",
+      "parent": "B16F.B15F",
+      "endpoint": "prefix",
+      "negated_from": "B16F.B15F.B13T"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F",
+      "parent": "B16F.B15F.B13F",
+      "endpoint": "prefix",
+      "negated_from": "B16F.B15F.B13F.B11T"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9F",
+      "parent": "B16F.B15F.B13F.B11F",
+      "endpoint": "prefix",
+      "negated_from": "B16F.B15F.B13F.B11F.B9T"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9F.B5F",
+      "parent": "B16F.B15F.B13F.B11F.B9F",
+      "endpoint": "prefix",
+      "negated_from": "B16F.B15F.B13F.B11F.B9F.B5T"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9F.B5F.B3F",
+      "parent": "B16F.B15F.B13F.B11F.B9F.B5F",
+      "endpoint": "exit",
+      "negated_from": "B16F.B15F.B13F.B11F.B9F.B5F.B3T"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9F.B5F.B3T",
+      "parent": "B16F.B15F.B13F.B11F.B9F.B5F",
+      "endpoint": "exit",
+      "edge_condition": "(charge_level < 20)"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9F.B5T",
+      "parent": "B16F.B15F.B13F.B11F.B9F",
+      "endpoint": "exit",
+      "edge_condition": "(current > 1000)"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9T",
+      "parent": "B16F.B15F.B13F.B11F",
+      "endpoint": "prefix",
+      "edge_condition": "(voltage < 3600)"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9T.B8F",
+      "parent": "B16F.B15F.B13F.B11F.B9T",
+      "endpoint": "exit",
+      "negated_from": "B16F.B15F.B13F.B11F.B9T.B8T"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11F.B9T.B8T",
+      "parent": "B16F.B15F.B13F.B11F.B9T",
+      "endpoint": "exit",
+      "edge_condition": "(current < 500)"
+    },
+    {
+      "label": "B16F.B15F.B13F.B11T",
+      "parent": "B16F.B15F.B13F",
+      "endpoint": "exit",
+      "edge_condition": "(charge_level >= 95)"
+    },
+    {
+      "label": "B16F.B15F.B13T",
+      "parent": "B16F.B15F",
+      "endpoint": "exit",
+      "edge_condition": "(voltage > 4200)"
+    },
+    {
+      "label": "B16F.B15T",
+      "parent": "B16F",
+      "endpoint": "exit",
+      "edge_condition": "(temperature > 45)"
+    },
+    {
+      "label": "B16T",
+      "parent": "",
+      "endpoint": "exit",
+      "edge_condition": "(temperature < 0)"
+    }
+  ]
+}
