@@ -1,0 +1,106 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "n": "0",
+        "stop": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6F",
+      "predicate": "(not((n > 0)))",
+      "solve_time_ms": 1.042028,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "n": "1",
+        "stop": "-1"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5F",
+      "predicate": "((n > 0)) and (not((stop == 0)))",
+      "solve_time_ms": 1.6194360000000001,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "n": "1",
+        "stop": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B4F.B6F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (not(((n - 1) > 0)))",
+      "solve_time_ms": 2.7249150000000002,
+      "status": "sat"
+    },
+    {
+      "model_validated": false,
+      "path_label": "B6T.B5T.B4F.B6T.B5F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and (not((stop == 0)))",
+      "solve_time_ms": 5.3998470000000003,
+      "status": "unsat"
+    },
+    {
+      "model_validated": false,
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and (not((((n - 1) - 1) > 0)))",
+      "solve_time_ms": 8.6831689999999995,
+      "status": "unsat"
+    },
+    {
+      "model_validated": false,
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and ((((n - 1) - 1) > 0)) and (not((stop == 0)))",
+      "solve_time_ms": 8.4209110000000003,
+      "status": "unsat"
+    },
+    {
+      "model": {
+        "n": "4",
+        "stop": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and ((((n - 1) - 1) > 0)) and ((stop == 0)) and ((((n - 1) - 1) == 2))",
+      "solve_time_ms": 4.8314700000000004,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "n": "3",
+        "stop": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (((n - 1) == 2))",
+      "solve_time_ms": 4.1705069999999997,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "n": "2",
+        "stop": "0"
+      },
+      "model_validated": true,
+      "path_label": "B6T.B5T.B4T",
+      "predicate": "((n > 0)) and ((stop == 0)) and ((n == 2))",
+      "solve_time_ms": 2.5741390000000002,
+      "status": "sat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 6,
+    "total_paths": 9,
+    "total_solve_time_ms": 39.517318000000003,
+    "unknown": 0,
+    "unsat": 3,
+    "unsupported": 0
+  }
+}

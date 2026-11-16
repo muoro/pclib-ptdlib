@@ -1,0 +1,28 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "short_circuit_mixed",
+  "path_conditions": [
+    {
+      "path_label": "B5F.B4F",
+      "predicate": "(not((x > 0))) and (not((y > 5)))"
+    },
+    {
+      "path_label": "B5F.B4T.B3F",
+      "predicate": "(not((x > 0))) and ((y > 5)) and (not((z < 3)))"
+    },
+    {
+      "path_label": "B5F.B4T.B3T",
+      "predicate": "(not((x > 0))) and ((y > 5)) and ((z < 3))"
+    },
+    {
+      "path_label": "B5T.B3F",
+      "predicate": "((x > 0)) and (not((z < 3)))"
+    },
+    {
+      "path_label": "B5T.B3T",
+      "predicate": "((x > 0)) and ((z < 3))"
+    }
+  ],
+  "total_paths": 5
+}

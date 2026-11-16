@@ -1,0 +1,2 @@
+# Keep shell scripts and source files usable in Linux/WSL after Windows checkout.
+* text=auto eol=lf

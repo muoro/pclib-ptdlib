@@ -1,0 +1,149 @@
+{
+  "summary": {
+    "total_nodes": 19,
+    "complete_paths": 9,
+    "stored_predicates": 9
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "8b95b705d64e830e153af90bdc350227cf9b19635b1eadd0fea145861a6ff987",
+    "source_sha256": "39e098ee14ea2fda2d34dea4b7c740a9e49086c5ad91389e12c99079c68a3d3a"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 3
+    }
+  },
+  "function": {
+    "name": "short_circuit_for",
+    "inputs": [
+      {
+        "name": "n",
+        "type": "int32"
+      },
+      {
+        "name": "stop",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B6F",
+      "parent": "",
+      "endpoint": "exit",
+      "negated_from": "B6T"
+    },
+    {
+      "label": "B6T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "(n > 0)"
+    },
+    {
+      "label": "B6T.B5F",
+      "parent": "B6T",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T"
+    },
+    {
+      "label": "B6T.B5T",
+      "parent": "B6T",
+      "endpoint": "prefix",
+      "edge_condition": "(stop == 0)"
+    },
+    {
+      "label": "B6T.B5T.B4F",
+      "parent": "B6T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B4T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6F",
+      "parent": "B6T.B5T.B4F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B4F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T",
+      "parent": "B6T.B5T.B4F",
+      "endpoint": "prefix",
+      "edge_condition": "((n - 1) > 0)"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5F",
+      "parent": "B6T.B5T.B4F.B6T",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B4F.B6T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T",
+      "parent": "B6T.B5T.B4F.B6T",
+      "endpoint": "prefix",
+      "edge_condition": "(stop == 0)"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F",
+      "parent": "B6T.B5T.B4F.B6T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B4F.B6T.B5T.B4T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F.B6F",
+      "parent": "B6T.B5T.B4F.B6T.B5T.B4F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+      "parent": "B6T.B5T.B4F.B6T.B5T.B4F",
+      "endpoint": "prefix",
+      "edge_condition": "(((n - 1) - 1) > 0)"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5F",
+      "parent": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+      "parent": "B6T.B5T.B4F.B6T.B5T.B4F.B6T",
+      "endpoint": "prefix",
+      "edge_condition": "(stop == 0)"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4F",
+      "parent": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+      "endpoint": "cutoff",
+      "negated_from": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+      "parent": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T",
+      "endpoint": "exit",
+      "edge_condition": "(((n - 1) - 1) == 2)"
+    },
+    {
+      "label": "B6T.B5T.B4F.B6T.B5T.B4T",
+      "parent": "B6T.B5T.B4F.B6T.B5T",
+      "endpoint": "exit",
+      "edge_condition": "((n - 1) == 2)"
+    },
+    {
+      "label": "B6T.B5T.B4T",
+      "parent": "B6T.B5T",
+      "endpoint": "exit",
+      "edge_condition": "(n == 2)"
+    }
+  ]
+}

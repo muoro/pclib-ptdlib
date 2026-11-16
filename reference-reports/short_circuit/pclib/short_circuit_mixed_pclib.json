@@ -1,0 +1,93 @@
+{
+  "summary": {
+    "total_nodes": 9,
+    "complete_paths": 5,
+    "stored_predicates": 4
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "615aa8d1c51fe6e21b0ecbcf542979f624f5396398c64fec5718f491b74ac7ea",
+    "source_sha256": "39e098ee14ea2fda2d34dea4b7c740a9e49086c5ad91389e12c99079c68a3d3a"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 1
+    }
+  },
+  "function": {
+    "name": "short_circuit_mixed",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "name": "y",
+        "type": "int32"
+      },
+      {
+        "name": "z",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B5F",
+      "parent": "",
+      "endpoint": "prefix",
+      "negated_from": "B5T"
+    },
+    {
+      "label": "B5F.B4F",
+      "parent": "B5F",
+      "endpoint": "exit",
+      "negated_from": "B5F.B4T"
+    },
+    {
+      "label": "B5F.B4T",
+      "parent": "B5F",
+      "endpoint": "prefix",
+      "edge_condition": "(y > 5)"
+    },
+    {
+      "label": "B5F.B4T.B3F",
+      "parent": "B5F.B4T",
+      "endpoint": "exit",
+      "negated_from": "B5F.B4T.B3T"
+    },
+    {
+      "label": "B5F.B4T.B3T",
+      "parent": "B5F.B4T",
+      "endpoint": "exit",
+      "edge_condition": "(z < 3)"
+    },
+    {
+      "label": "B5T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "(x > 0)"
+    },
+    {
+      "label": "B5T.B3F",
+      "parent": "B5T",
+      "endpoint": "exit",
+      "negated_from": "B5T.B3T"
+    },
+    {
+      "label": "B5T.B3T",
+      "parent": "B5T",
+      "endpoint": "exit",
+      "edge_condition": "(z < 3)"
+    }
+  ]
+}

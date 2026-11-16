@@ -1,0 +1,59 @@
+{
+  "schema": "pccscc-paper-experiments",
+  "schema_version": 1,
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "max_passes": 3,
+    "compiler_flags": [
+      "-std=c11"
+    ],
+    "input_domain": "signed 32-bit parameter values; formulas use mathematical integer arithmetic"
+  },
+  "profiles": {
+    "smoke": [
+      "simple_if",
+      "nested_if",
+      "loop_while"
+    ],
+    "paper": [
+      "simple_if",
+      "nested_if",
+      "loop_while",
+      "sensor_fusion_step",
+      "motor_control",
+      "charging_control"
+    ]
+  },
+  "cases": [
+    {
+      "id": "simple_if",
+      "function": "simple_if",
+      "source": "examples/thesis/simple_if.c"
+    },
+    {
+      "id": "nested_if",
+      "function": "nested_if",
+      "source": "examples/thesis/nested_if.c"
+    },
+    {
+      "id": "loop_while",
+      "function": "loop_while",
+      "source": "examples/thesis/loop_while.c"
+    },
+    {
+      "id": "sensor_fusion_step",
+      "function": "sensor_fusion_step",
+      "source": "examples/thesis/sensor_fusion_step.c"
+    },
+    {
+      "id": "motor_control",
+      "function": "motor_control",
+      "source": "examples/thesis/20261001_case_study_2_motor_control_TU_Wien.c"
+    },
+    {
+      "id": "charging_control",
+      "function": "charging_control",
+      "source": "examples/thesis/20261001_case_study_3_charging_control_TU_Wien.c"
+    }
+  ]
+}

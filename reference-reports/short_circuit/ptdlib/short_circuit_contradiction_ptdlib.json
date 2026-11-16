@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "total_tests": 2,
+    "total_objectives": 2,
+    "objectives_with_tests": 2
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "e3d265461157b8ba1a172a05b5c7dd54bb137dd103c0165354797d652a2ad73c"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "short_circuit_contradiction",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B4F",
+      "inputs": {
+        "x": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B4T.B3F",
+      "inputs": {
+        "x": 1
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B4F",
+      "status": "sat",
+      "predicate": "(not((x > 0)))",
+      "model_validated": true,
+      "solve_time_ms": 1.072165
+    },
+    {
+      "path_label": "B4T.B3F",
+      "status": "sat",
+      "predicate": "((x > 0)) and (not((x < 0)))",
+      "model_validated": true,
+      "solve_time_ms": 1.627534
+    }
+  ]
+}

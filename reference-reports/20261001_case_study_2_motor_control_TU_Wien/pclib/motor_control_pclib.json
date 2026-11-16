@@ -1,0 +1,137 @@
+{
+  "summary": {
+    "total_nodes": 15,
+    "complete_paths": 8,
+    "stored_predicates": 7
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 3,
+    "library_id": "125cc960de09f359f1769e38da4d176661d1a1b76b22467df64b2a51eeaeb41f",
+    "source_sha256": "297fcf5883f90b23c3c9f02e5c04da49e4c0c04b5287bb5931a2387e1fa664bd"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 1
+    }
+  },
+  "function": {
+    "name": "motor_control",
+    "inputs": [
+      {
+        "name": "target_speed",
+        "type": "int32"
+      },
+      {
+        "name": "actual_speed",
+        "type": "int32"
+      },
+      {
+        "name": "motor_current",
+        "type": "int32"
+      },
+      {
+        "name": "temperature",
+        "type": "int32"
+      },
+      {
+        "name": "fault",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B14F",
+      "parent": "",
+      "endpoint": "prefix",
+      "negated_from": "B14T"
+    },
+    {
+      "label": "B14F.B13F",
+      "parent": "B14F",
+      "endpoint": "prefix",
+      "negated_from": "B14F.B13T"
+    },
+    {
+      "label": "B14F.B13F.B11F",
+      "parent": "B14F.B13F",
+      "endpoint": "prefix",
+      "negated_from": "B14F.B13F.B11T"
+    },
+    {
+      "label": "B14F.B13F.B11F.B7F",
+      "parent": "B14F.B13F.B11F",
+      "endpoint": "prefix",
+      "negated_from": "B14F.B13F.B11F.B7T"
+    },
+    {
+      "label": "B14F.B13F.B11F.B7F.B3F",
+      "parent": "B14F.B13F.B11F.B7F",
+      "endpoint": "exit",
+      "negated_from": "B14F.B13F.B11F.B7F.B3T"
+    },
+    {
+      "label": "B14F.B13F.B11F.B7F.B3T",
+      "parent": "B14F.B13F.B11F.B7F",
+      "endpoint": "exit",
+      "edge_condition": "(motor_current > 100)"
+    },
+    {
+      "label": "B14F.B13F.B11F.B7T",
+      "parent": "B14F.B13F.B11F",
+      "endpoint": "prefix",
+      "edge_condition": "((target_speed - actual_speed) < -20)"
+    },
+    {
+      "label": "B14F.B13F.B11F.B7T.B6F",
+      "parent": "B14F.B13F.B11F.B7T",
+      "endpoint": "exit",
+      "negated_from": "B14F.B13F.B11F.B7T.B6T"
+    },
+    {
+      "label": "B14F.B13F.B11F.B7T.B6T",
+      "parent": "B14F.B13F.B11F.B7T",
+      "endpoint": "exit",
+      "edge_condition": "(motor_current > 10)"
+    },
+    {
+      "label": "B14F.B13F.B11T",
+      "parent": "B14F.B13F",
+      "endpoint": "prefix",
+      "edge_condition": "((target_speed - actual_speed) > 20)"
+    },
+    {
+      "label": "B14F.B13F.B11T.B10F",
+      "parent": "B14F.B13F.B11T",
+      "endpoint": "exit",
+      "negated_from": "B14F.B13F.B11T.B10T"
+    },
+    {
+      "label": "B14F.B13F.B11T.B10T",
+      "parent": "B14F.B13F.B11T",
+      "endpoint": "exit",
+      "edge_condition": "(motor_current < 100)"
+    },
+    {
+      "label": "B14F.B13T",
+      "parent": "B14F",
+      "endpoint": "exit",
+      "edge_condition": "(temperature > 80)"
+    },
+    {
+      "label": "B14T",
+      "parent": "",
+      "endpoint": "exit",
+      "edge_condition": "(fault != 0)"
+    }
+  ]
+}

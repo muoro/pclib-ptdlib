@@ -1,0 +1,41 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "x": "0",
+        "y": "0"
+      },
+      "model_validated": true,
+      "path_label": "B3F",
+      "predicate": "(not(((x * 2) > y)))",
+      "solve_time_ms": 7.8577919999999999,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "x": "0",
+        "y": "-1"
+      },
+      "model_validated": true,
+      "path_label": "B3T",
+      "predicate": "(((x * 2) > y))",
+      "solve_time_ms": 5.4306520000000003,
+      "status": "sat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 2,
+    "total_paths": 2,
+    "total_solve_time_ms": 13.344891000000001,
+    "unknown": 0,
+    "unsat": 0,
+    "unsupported": 0
+  }
+}

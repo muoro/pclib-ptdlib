@@ -1,0 +1,243 @@
+{
+  "cfg_analysis_results": {
+    "blocks": [
+      {
+        "block_id": 0,
+        "block_name": "B0",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 1,
+        "block_name": "B1",
+        "conditions": [
+          {
+            "path_label": ""
+          }
+        ],
+        "successors": [
+          0
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 2,
+        "block_name": "B2",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B2T",
+            "path_label": "B2F"
+          },
+          {
+            "path_label": "B2T",
+            "predicate": "(c < a)"
+          }
+        ],
+        "successors": [
+          1,
+          0
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 3,
+        "block_name": "B3",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B2T",
+            "path_label": "B2F"
+          },
+          {
+            "path_label": "B2T",
+            "predicate": "((c + 1) < a)"
+          }
+        ],
+        "successors": [
+          2
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 4,
+        "block_name": "B4",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B2T",
+            "path_label": "B2F"
+          },
+          {
+            "path_label": "B2T",
+            "predicate": "((c - 1) < a)"
+          }
+        ],
+        "successors": [
+          2
+        ],
+        "terminator_type": "none"
+      },
+      {
+        "block_id": 5,
+        "block_name": "B5",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B5T",
+            "path_label": "B5F"
+          },
+          {
+            "negated_from": "B5F.B2T",
+            "path_label": "B5F.B2F"
+          },
+          {
+            "path_label": "B5F.B2T",
+            "predicate": "((c + 1) < a)"
+          },
+          {
+            "path_label": "B5T",
+            "predicate": "((b + 2) < c)"
+          },
+          {
+            "negated_from": "B5T.B2T",
+            "path_label": "B5T.B2F"
+          },
+          {
+            "path_label": "B5T.B2T",
+            "predicate": "((c - 1) < a)"
+          }
+        ],
+        "successors": [
+          4,
+          3
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 6,
+        "block_name": "B6",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B6T",
+            "path_label": "B6F"
+          },
+          {
+            "negated_from": "B6F.B2T",
+            "path_label": "B6F.B2F"
+          },
+          {
+            "path_label": "B6F.B2T",
+            "predicate": "(c < (a + 1))"
+          },
+          {
+            "path_label": "B6T",
+            "predicate": "((a + 1) < b)"
+          },
+          {
+            "negated_from": "B6T.B5T",
+            "path_label": "B6T.B5F"
+          },
+          {
+            "negated_from": "B6T.B5F.B2T",
+            "path_label": "B6T.B5F.B2F"
+          },
+          {
+            "path_label": "B6T.B5F.B2T",
+            "predicate": "((c + 1) < (a + 1))"
+          },
+          {
+            "path_label": "B6T.B5T",
+            "predicate": "((b + 2) < c)"
+          },
+          {
+            "negated_from": "B6T.B5T.B2T",
+            "path_label": "B6T.B5T.B2F"
+          },
+          {
+            "path_label": "B6T.B5T.B2T",
+            "predicate": "((c - 1) < (a + 1))"
+          }
+        ],
+        "successors": [
+          5,
+          2
+        ],
+        "terminator_type": "if"
+      },
+      {
+        "block_id": 7,
+        "block_name": "B7",
+        "conditions": [
+          {
+            "path_label": ""
+          },
+          {
+            "negated_from": "B6T",
+            "path_label": "B6F"
+          },
+          {
+            "negated_from": "B6F.B2T",
+            "path_label": "B6F.B2F"
+          },
+          {
+            "path_label": "B6F.B2T",
+            "predicate": "(c < (a + 1))"
+          },
+          {
+            "path_label": "B6T",
+            "predicate": "((a + 1) < b)"
+          },
+          {
+            "negated_from": "B6T.B5T",
+            "path_label": "B6T.B5F"
+          },
+          {
+            "negated_from": "B6T.B5F.B2T",
+            "path_label": "B6T.B5F.B2F"
+          },
+          {
+            "path_label": "B6T.B5F.B2T",
+            "predicate": "((c + 1) < (a + 1))"
+          },
+          {
+            "path_label": "B6T.B5T",
+            "predicate": "((b + 2) < c)"
+          },
+          {
+            "negated_from": "B6T.B5T.B2T",
+            "path_label": "B6T.B5T.B2F"
+          },
+          {
+            "path_label": "B6T.B5T.B2T",
+            "predicate": "((c - 1) < (a + 1))"
+          }
+        ],
+        "successors": [
+          6
+        ],
+        "terminator_type": "none"
+      }
+    ],
+    "entry_block_id": 7,
+    "false_edges": "negated_from",
+    "representation": "incremental-edge-constraints",
+    "total_blocks": 8
+  }
+}

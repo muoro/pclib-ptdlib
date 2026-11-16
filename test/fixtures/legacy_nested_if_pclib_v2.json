@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "total_nodes": 11,
+    "complete_paths": 6,
+    "stored_predicates": 5
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 2,
+    "library_id": "58baa157c33bc536da1aee5a38a9c0af8ea3f418932dd837f44edbc032ca4e41",
+    "source_sha256": "530c92e471c4e9f16332a0840921596826f80b8066f95d270064e2beb927bad9"
+  },
+  "analysis": {
+    "semantics": "signed-bv32-wrap",
+    "bound": {
+      "kind": "backward-propagation-passes",
+      "configured": 3,
+      "performed": 1
+    }
+  },
+  "function": {
+    "name": "nested_if",
+    "inputs": [
+      {
+        "name": "a",
+        "type": "int32"
+      },
+      {
+        "name": "b",
+        "type": "int32"
+      },
+      {
+        "name": "c",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B6F",
+      "parent": "",
+      "endpoint": "prefix",
+      "negated_from": "B6T"
+    },
+    {
+      "label": "B6F.B2F",
+      "parent": "B6F",
+      "endpoint": "exit",
+      "negated_from": "B6F.B2T"
+    },
+    {
+      "label": "B6F.B2T",
+      "parent": "B6F",
+      "endpoint": "exit",
+      "edge_condition": "(c < (a + 1))"
+    },
+    {
+      "label": "B6T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "((a + 1) < b)"
+    },
+    {
+      "label": "B6T.B5F",
+      "parent": "B6T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T"
+    },
+    {
+      "label": "B6T.B5F.B2F",
+      "parent": "B6T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5F.B2T"
+    },
+    {
+      "label": "B6T.B5F.B2T",
+      "parent": "B6T.B5F",
+      "endpoint": "exit",
+      "edge_condition": "((c + 1) < (a + 1))"
+    },
+    {
+      "label": "B6T.B5T",
+      "parent": "B6T",
+      "endpoint": "prefix",
+      "edge_condition": "((b + 2) < c)"
+    },
+    {
+      "label": "B6T.B5T.B2F",
+      "parent": "B6T.B5T",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B2T"
+    },
+    {
+      "label": "B6T.B5T.B2T",
+      "parent": "B6T.B5T",
+      "endpoint": "exit",
+      "edge_condition": "((c - 1) < (a + 1))"
+    }
+  ]
+}

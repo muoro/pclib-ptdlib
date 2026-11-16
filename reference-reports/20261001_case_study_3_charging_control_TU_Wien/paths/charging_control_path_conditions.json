@@ -1,0 +1,44 @@
+{
+  "analysis_passes": 1,
+  "configured_max_passes": 3,
+  "function": "charging_control",
+  "path_conditions": [
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3F",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and (not((current > 1000))) and (not((charge_level < 20)))"
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5F.B3T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and (not((current > 1000))) and ((charge_level < 20))"
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9F.B5T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and (not((voltage < 3600))) and ((current > 1000))"
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8F",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and ((voltage < 3600)) and (not((current < 500)))"
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11F.B9T.B8T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and (not((charge_level >= 95))) and ((voltage < 3600)) and ((current < 500))"
+    },
+    {
+      "path_label": "B16F.B15F.B13F.B11T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and (not((voltage > 4200))) and ((charge_level >= 95))"
+    },
+    {
+      "path_label": "B16F.B15F.B13T",
+      "predicate": "(not((temperature < 0))) and (not((temperature > 45))) and ((voltage > 4200))"
+    },
+    {
+      "path_label": "B16F.B15T",
+      "predicate": "(not((temperature < 0))) and ((temperature > 45))"
+    },
+    {
+      "path_label": "B16T",
+      "predicate": "((temperature < 0))"
+    }
+  ],
+  "total_paths": 9
+}

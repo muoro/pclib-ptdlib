@@ -1,0 +1,44 @@
+{
+  "analysis_passes": 3,
+  "configured_max_passes": 3,
+  "function": "short_circuit_for",
+  "path_conditions": [
+    {
+      "path_label": "B6F",
+      "predicate": "(not((n > 0)))"
+    },
+    {
+      "path_label": "B6T.B5F",
+      "predicate": "((n > 0)) and (not((stop == 0)))"
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (not(((n - 1) > 0)))"
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and (not((stop == 0)))"
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and (not((((n - 1) - 1) > 0)))"
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5F",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and ((((n - 1) - 1) > 0)) and (not((stop == 0)))"
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and ((((n - 1) - 1) > 0)) and ((stop == 0)) and ((((n - 1) - 1) == 2))"
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (((n - 1) == 2))"
+    },
+    {
+      "path_label": "B6T.B5T.B4T",
+      "predicate": "((n > 0)) and ((stop == 0)) and ((n == 2))"
+    }
+  ],
+  "total_paths": 9
+}

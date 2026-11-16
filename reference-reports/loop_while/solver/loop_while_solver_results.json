@@ -1,0 +1,49 @@
+{
+  "solver_results": [
+    {
+      "model": {
+        "a": "11"
+      },
+      "model_validated": true,
+      "path_label": "B3F",
+      "predicate": "(not((a <= 10)))",
+      "solve_time_ms": 9.005668,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "10"
+      },
+      "model_validated": true,
+      "path_label": "B3T.B3F",
+      "predicate": "((a <= 10)) and (not(((a + 1) <= 10)))",
+      "solve_time_ms": 7.3466170000000002,
+      "status": "sat"
+    },
+    {
+      "model": {
+        "a": "9"
+      },
+      "model_validated": true,
+      "path_label": "B3T.B3T.B3F",
+      "predicate": "((a <= 10)) and (((a + 1) <= 10)) and (not((((a + 1) + 1) <= 10)))",
+      "solve_time_ms": 2.8416130000000002,
+      "status": "sat"
+    }
+  ],
+  "summary": {
+    "definitions": {
+      "sat": "At least one input model satisfies the path predicate.",
+      "unknown": "The solver could not determine satisfiability.",
+      "unsat": "No input model satisfies the path predicate.",
+      "unsupported": "The path contains an expression that cannot be solved."
+    },
+    "input_model": "mathematical-integers",
+    "sat": 3,
+    "total_paths": 3,
+    "total_solve_time_ms": 19.243342999999999,
+    "unknown": 0,
+    "unsat": 0,
+    "unsupported": 0
+  }
+}

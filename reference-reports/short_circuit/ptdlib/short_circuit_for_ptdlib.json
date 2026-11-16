@@ -1,0 +1,161 @@
+{
+  "summary": {
+    "total_tests": 6,
+    "total_objectives": 9,
+    "objectives_with_tests": 6
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "8b95b705d64e830e153af90bdc350227cf9b19635b1eadd0fea145861a6ff987"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "short_circuit_for",
+    "inputs": [
+      {
+        "name": "n",
+        "type": "int32"
+      },
+      {
+        "name": "stop",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B6F",
+      "inputs": {
+        "n": 0,
+        "stop": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B6T.B5F",
+      "inputs": {
+        "n": 1,
+        "stop": -1
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B6T.B5T.B4F.B6F",
+      "inputs": {
+        "n": 1,
+        "stop": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+      "inputs": {
+        "n": 4,
+        "stop": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+      "inputs": {
+        "n": 3,
+        "stop": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t6",
+      "path_label": "B6T.B5T.B4T",
+      "inputs": {
+        "n": 2,
+        "stop": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B6F",
+      "status": "sat",
+      "predicate": "(not((n > 0)))",
+      "model_validated": true,
+      "solve_time_ms": 1.042028
+    },
+    {
+      "path_label": "B6T.B5F",
+      "status": "sat",
+      "predicate": "((n > 0)) and (not((stop == 0)))",
+      "model_validated": true,
+      "solve_time_ms": 1.6194360000000001
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6F",
+      "status": "sat",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (not(((n - 1) > 0)))",
+      "model_validated": true,
+      "solve_time_ms": 2.7249150000000002
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5F",
+      "status": "unsat",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and (not((stop == 0)))",
+      "model_validated": false,
+      "solve_time_ms": 5.3998470000000003
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6F",
+      "status": "unsat",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and (not((((n - 1) - 1) > 0)))",
+      "model_validated": false,
+      "solve_time_ms": 8.6831689999999995
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5F",
+      "status": "unsat",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and ((((n - 1) - 1) > 0)) and (not((stop == 0)))",
+      "model_validated": false,
+      "solve_time_ms": 8.4209110000000003
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4F.B6T.B5T.B4T",
+      "status": "sat",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (not(((n - 1) == 2))) and ((((n - 1) - 1) > 0)) and ((stop == 0)) and ((((n - 1) - 1) == 2))",
+      "model_validated": true,
+      "solve_time_ms": 4.8314700000000004
+    },
+    {
+      "path_label": "B6T.B5T.B4F.B6T.B5T.B4T",
+      "status": "sat",
+      "predicate": "((n > 0)) and ((stop == 0)) and (not((n == 2))) and (((n - 1) > 0)) and ((stop == 0)) and (((n - 1) == 2))",
+      "model_validated": true,
+      "solve_time_ms": 4.1705069999999997
+    },
+    {
+      "path_label": "B6T.B5T.B4T",
+      "status": "sat",
+      "predicate": "((n > 0)) and ((stop == 0)) and ((n == 2))",
+      "model_validated": true,
+      "solve_time_ms": 2.5741390000000002
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Only source inputs needed for the image belong in the Docker build context.
+**
+!Dockerfile
+!.dockerignore
+!CMakeLists.txt
+!src/
+!src/**
+!include/
+!include/**
+!examples/
+!examples/thesis/
+!examples/thesis/**

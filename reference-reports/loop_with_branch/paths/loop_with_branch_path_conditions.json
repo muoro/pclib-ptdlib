@@ -1,0 +1,36 @@
+{
+  "analysis_passes": 3,
+  "configured_max_passes": 3,
+  "function": "loop_with_branch",
+  "path_conditions": [
+    {
+      "path_label": "B6F",
+      "predicate": "(not((a <= 10)))"
+    },
+    {
+      "path_label": "B6T.B5F.B6F",
+      "predicate": "((a <= 10)) and (not((b > a))) and (not(((a + 1) <= 10)))"
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5F.B6F",
+      "predicate": "((a <= 10)) and (not((b > a))) and (((a + 1) <= 10)) and (not(((b + 1) > (a + 1)))) and (not((((a + 1) + 1) <= 10)))"
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5T.B6F",
+      "predicate": "((a <= 10)) and (not((b > a))) and (((a + 1) <= 10)) and (((b + 1) > (a + 1))) and (not((((a + 1) + 1) <= 10)))"
+    },
+    {
+      "path_label": "B6T.B5T.B6F",
+      "predicate": "((a <= 10)) and ((b > a)) and (not(((a + 1) <= 10)))"
+    },
+    {
+      "path_label": "B6T.B5T.B6T.B5F.B6F",
+      "predicate": "((a <= 10)) and ((b > a)) and (((a + 1) <= 10)) and (not(((b - 1) > (a + 1)))) and (not((((a + 1) + 1) <= 10)))"
+    },
+    {
+      "path_label": "B6T.B5T.B6T.B5T.B6F",
+      "predicate": "((a <= 10)) and ((b > a)) and (((a + 1) <= 10)) and (((b - 1) > (a + 1))) and (not((((a + 1) + 1) <= 10)))"
+    }
+  ],
+  "total_paths": 7
+}

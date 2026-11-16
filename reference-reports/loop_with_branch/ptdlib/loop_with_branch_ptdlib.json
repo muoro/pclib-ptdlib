@@ -1,0 +1,147 @@
+{
+  "summary": {
+    "total_tests": 6,
+    "total_objectives": 7,
+    "objectives_with_tests": 6
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "b63abe2637ad6e15040656af8ba9c78bc7f12c39118ddcc94097d8c13f3d3a51"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "loop_with_branch",
+    "inputs": [
+      {
+        "name": "a",
+        "type": "int32"
+      },
+      {
+        "name": "b",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B6F",
+      "inputs": {
+        "a": 11,
+        "b": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B6T.B5F.B6F",
+      "inputs": {
+        "a": 10,
+        "b": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B6T.B5F.B6T.B5F.B6F",
+      "inputs": {
+        "a": 9,
+        "b": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B6T.B5T.B6F",
+      "inputs": {
+        "a": 10,
+        "b": 11
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B6T.B5T.B6T.B5F.B6F",
+      "inputs": {
+        "a": 9,
+        "b": 10
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t6",
+      "path_label": "B6T.B5T.B6T.B5T.B6F",
+      "inputs": {
+        "a": 9,
+        "b": 12
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B6F",
+      "status": "sat",
+      "predicate": "(not((a <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 8.9246770000000009
+    },
+    {
+      "path_label": "B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and (not((b > a))) and (not(((a + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 8.3235460000000003
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and (not((b > a))) and (((a + 1) <= 10)) and (not(((b + 1) > (a + 1)))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.2448329999999999
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5T.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and (not((b > a))) and (((a + 1) <= 10)) and (((b + 1) > (a + 1))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 5.9937719999999999
+    },
+    {
+      "path_label": "B6T.B5T.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b > a)) and (not(((a + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 2.2737409999999998
+    },
+    {
+      "path_label": "B6T.B5T.B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b > a)) and (((a + 1) <= 10)) and (not(((b - 1) > (a + 1)))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.3109999999999999
+    },
+    {
+      "path_label": "B6T.B5T.B6T.B5T.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b > a)) and (((a + 1) <= 10)) and (((b - 1) > (a + 1))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.5074149999999999
+    }
+  ]
+}

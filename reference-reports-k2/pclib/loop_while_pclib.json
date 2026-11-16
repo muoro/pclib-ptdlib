@@ -1,0 +1,72 @@
+{
+  "summary": {
+    "total_nodes": 7,
+    "complete_paths": 3,
+    "stored_predicates": 3
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 4,
+    "library_id": "7fca2e7d9a24b1ad2e8e38a2b5ca49705c7425b3e6dc531da9f30b12289e8d4b",
+    "source_sha256": "835e92f718a74fcad267337b1d136db26b4cb81089c463b061f048a6eca093f4"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "loop-body-entries-per-activation",
+      "configured": 2
+    }
+  },
+  "function": {
+    "name": "loop_while",
+    "inputs": [
+      {
+        "name": "a",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B3F",
+      "parent": "",
+      "endpoint": "exit",
+      "negated_from": "B3T"
+    },
+    {
+      "label": "B3T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "(a <= 10)"
+    },
+    {
+      "label": "B3T.B3F",
+      "parent": "B3T",
+      "endpoint": "exit",
+      "negated_from": "B3T.B3T"
+    },
+    {
+      "label": "B3T.B3T",
+      "parent": "B3T",
+      "endpoint": "prefix",
+      "edge_condition": "((a + 1) <= 10)"
+    },
+    {
+      "label": "B3T.B3T.B3F",
+      "parent": "B3T.B3T",
+      "endpoint": "exit",
+      "negated_from": "B3T.B3T.B3T"
+    },
+    {
+      "label": "B3T.B3T.B3T",
+      "parent": "B3T.B3T",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    }
+  ]
+}

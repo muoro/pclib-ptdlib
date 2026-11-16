@@ -1,0 +1,340 @@
+{
+  "summary": {
+    "total_nodes": 51,
+    "complete_paths": 13,
+    "stored_predicates": 25
+  },
+  "metadata": {
+    "schema": "pclib",
+    "schema_version": 4,
+    "library_id": "78562111d10dd1c73b934eb3e0535668aff7060a4a6f4851a3d341a8f724a955",
+    "source_sha256": "ef0f0539fbd03af3accfe843bda83cdc021c9dbc932e3b6103da7046e71881fd"
+  },
+  "analysis": {
+    "semantics": "mathematical-integers",
+    "bound": {
+      "kind": "loop-body-entries-per-activation",
+      "configured": 2
+    }
+  },
+  "function": {
+    "name": "nested_loop",
+    "inputs": [
+      {
+        "name": "a",
+        "type": "int32"
+      },
+      {
+        "name": "b",
+        "type": "int32"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "",
+      "parent": null,
+      "endpoint": "prefix"
+    },
+    {
+      "label": "B6F",
+      "parent": "",
+      "endpoint": "exit",
+      "negated_from": "B6T"
+    },
+    {
+      "label": "B6T",
+      "parent": "",
+      "endpoint": "prefix",
+      "edge_condition": "(a <= 10)"
+    },
+    {
+      "label": "B6T.B5F",
+      "parent": "B6T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T"
+    },
+    {
+      "label": "B6T.B5F.B6F",
+      "parent": "B6T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5F.B6T",
+      "parent": "B6T.B5F",
+      "endpoint": "prefix",
+      "edge_condition": "((a + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5F",
+      "parent": "B6T.B5F.B6T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5F.B6T.B5T"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5F.B6F",
+      "parent": "B6T.B5F.B6T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5F.B6T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5F.B6T",
+      "parent": "B6T.B5F.B6T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T",
+      "parent": "B6T.B5F.B6T",
+      "endpoint": "prefix",
+      "edge_condition": "(b <= 10)"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5F",
+      "parent": "B6T.B5F.B6T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5F.B6T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5F.B6F",
+      "parent": "B6T.B5F.B6T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5F.B6T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5F.B6T",
+      "parent": "B6T.B5F.B6T.B5T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5T",
+      "parent": "B6T.B5F.B6T.B5T",
+      "endpoint": "prefix",
+      "edge_condition": "((b + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5T.B5F",
+      "parent": "B6T.B5F.B6T.B5T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5F.B6T.B5T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5T.B5F.B6F",
+      "parent": "B6T.B5F.B6T.B5T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5F.B6T.B5T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5T.B5F.B6T",
+      "parent": "B6T.B5F.B6T.B5T.B5T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5F.B6T.B5T.B5T.B5T",
+      "parent": "B6T.B5F.B6T.B5T.B5T",
+      "endpoint": "cutoff",
+      "edge_condition": "(((b + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T",
+      "parent": "B6T",
+      "endpoint": "prefix",
+      "edge_condition": "(b <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F",
+      "parent": "B6T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6F",
+      "parent": "B6T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T",
+      "parent": "B6T.B5T.B5F",
+      "endpoint": "prefix",
+      "edge_condition": "((a + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5F",
+      "parent": "B6T.B5T.B5F.B6T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5F.B6T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5F.B6F",
+      "parent": "B6T.B5T.B5F.B6T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5F.B6T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5F.B6T",
+      "parent": "B6T.B5T.B5F.B6T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T",
+      "parent": "B6T.B5T.B5F.B6T",
+      "endpoint": "prefix",
+      "edge_condition": "((b + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5F",
+      "parent": "B6T.B5T.B5F.B6T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5F.B6T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5F.B6F",
+      "parent": "B6T.B5T.B5F.B6T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5F.B6T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5F.B6T",
+      "parent": "B6T.B5T.B5F.B6T.B5T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5T",
+      "parent": "B6T.B5T.B5F.B6T.B5T",
+      "endpoint": "prefix",
+      "edge_condition": "(((b + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5T.B5F",
+      "parent": "B6T.B5T.B5F.B6T.B5T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5F.B6T.B5T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5T.B5F.B6F",
+      "parent": "B6T.B5T.B5F.B6T.B5T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5F.B6T.B5T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5T.B5F.B6T",
+      "parent": "B6T.B5T.B5F.B6T.B5T.B5T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5F.B6T.B5T.B5T.B5T",
+      "parent": "B6T.B5T.B5F.B6T.B5T.B5T",
+      "endpoint": "cutoff",
+      "edge_condition": "((((b + 1) + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T",
+      "parent": "B6T.B5T",
+      "endpoint": "prefix",
+      "edge_condition": "((b + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F",
+      "parent": "B6T.B5T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6F",
+      "parent": "B6T.B5T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T",
+      "parent": "B6T.B5T.B5T.B5F",
+      "endpoint": "prefix",
+      "edge_condition": "((a + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5F",
+      "parent": "B6T.B5T.B5T.B5F.B6T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5F.B6F",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5F.B6T",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T",
+      "parent": "B6T.B5T.B5T.B5F.B6T",
+      "endpoint": "prefix",
+      "edge_condition": "(((b + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5F",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5F.B6F",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5F.B6T",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5T",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T",
+      "endpoint": "prefix",
+      "edge_condition": "((((b + 1) + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T.B5T",
+      "endpoint": "prefix",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F.B6F",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F",
+      "endpoint": "exit",
+      "negated_from": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F.B6T"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F.B6T",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F",
+      "endpoint": "cutoff",
+      "edge_condition": "(((a + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5T",
+      "parent": "B6T.B5T.B5T.B5F.B6T.B5T.B5T",
+      "endpoint": "cutoff",
+      "edge_condition": "(((((b + 1) + 1) + 1) + 1) <= 10)"
+    },
+    {
+      "label": "B6T.B5T.B5T.B5T",
+      "parent": "B6T.B5T.B5T",
+      "endpoint": "cutoff",
+      "edge_condition": "(((b + 1) + 1) <= 10)"
+    }
+  ]
+}

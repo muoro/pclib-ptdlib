@@ -1,0 +1,200 @@
+{
+  "summary": {
+    "total_tests": 7,
+    "total_objectives": 13,
+    "objectives_with_tests": 7
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "78562111d10dd1c73b934eb3e0535668aff7060a4a6f4851a3d341a8f724a955"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "nested_loop",
+    "inputs": [
+      {
+        "name": "a",
+        "type": "int32"
+      },
+      {
+        "name": "b",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B6F",
+      "inputs": {
+        "a": 11,
+        "b": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B6T.B5F.B6F",
+      "inputs": {
+        "a": 10,
+        "b": 11
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B6T.B5F.B6T.B5F.B6F",
+      "inputs": {
+        "a": 9,
+        "b": 11
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t4",
+      "path_label": "B6T.B5T.B5F.B6F",
+      "inputs": {
+        "a": 10,
+        "b": 10
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t5",
+      "path_label": "B6T.B5T.B5F.B6T.B5F.B6F",
+      "inputs": {
+        "a": 9,
+        "b": 10
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t6",
+      "path_label": "B6T.B5T.B5T.B5F.B6F",
+      "inputs": {
+        "a": 10,
+        "b": 9
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t7",
+      "path_label": "B6T.B5T.B5T.B5F.B6T.B5F.B6F",
+      "inputs": {
+        "a": 9,
+        "b": 9
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B6F",
+      "status": "sat",
+      "predicate": "(not((a <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 6.3698699999999997
+    },
+    {
+      "path_label": "B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and (not((b <= 10))) and (not(((a + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 7.1123250000000002
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and (not((b <= 10))) and (((a + 1) <= 10)) and (not((b <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.543091
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5T.B5F.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and (not((b <= 10))) and (((a + 1) <= 10)) and ((b <= 10)) and (not(((b + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 6.5142249999999997
+    },
+    {
+      "path_label": "B6T.B5F.B6T.B5T.B5T.B5F.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and (not((b <= 10))) and (((a + 1) <= 10)) and ((b <= 10)) and (((b + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 7.5801720000000001
+    },
+    {
+      "path_label": "B6T.B5T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (not(((b + 1) <= 10))) and (not(((a + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 2.888887
+    },
+    {
+      "path_label": "B6T.B5T.B5F.B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (not(((b + 1) <= 10))) and (((a + 1) <= 10)) and (not(((b + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.4630339999999999
+    },
+    {
+      "path_label": "B6T.B5T.B5F.B6T.B5T.B5F.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (not(((b + 1) <= 10))) and (((a + 1) <= 10)) and (((b + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 7.5213190000000001
+    },
+    {
+      "path_label": "B6T.B5T.B5F.B6T.B5T.B5T.B5F.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (not(((b + 1) <= 10))) and (((a + 1) <= 10)) and (((b + 1) <= 10)) and ((((b + 1) + 1) <= 10)) and (not(((((b + 1) + 1) + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 7.758578
+    },
+    {
+      "path_label": "B6T.B5T.B5T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (((b + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (not(((a + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.069626
+    },
+    {
+      "path_label": "B6T.B5T.B5T.B5F.B6T.B5F.B6F",
+      "status": "sat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (((b + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (((a + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": true,
+      "solve_time_ms": 3.9956480000000001
+    },
+    {
+      "path_label": "B6T.B5T.B5T.B5F.B6T.B5T.B5F.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (((b + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (((a + 1) <= 10)) and ((((b + 1) + 1) <= 10)) and (not(((((b + 1) + 1) + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 7.7807019999999998
+    },
+    {
+      "path_label": "B6T.B5T.B5T.B5F.B6T.B5T.B5T.B5F.B6F",
+      "status": "unsat",
+      "predicate": "((a <= 10)) and ((b <= 10)) and (((b + 1) <= 10)) and (not((((b + 1) + 1) <= 10))) and (((a + 1) <= 10)) and ((((b + 1) + 1) <= 10)) and (((((b + 1) + 1) + 1) <= 10)) and (not((((((b + 1) + 1) + 1) + 1) <= 10))) and (not((((a + 1) + 1) <= 10)))",
+      "model_validated": false,
+      "solve_time_ms": 8.9899059999999995
+    }
+  ]
+}

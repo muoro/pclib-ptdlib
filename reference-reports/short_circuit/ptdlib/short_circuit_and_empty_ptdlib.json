@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "total_tests": 3,
+    "total_objectives": 3,
+    "objectives_with_tests": 3
+  },
+  "metadata": {
+    "schema": "ptdlib",
+    "schema_version": 2,
+    "pclib_id": "96e8b07432b0bac5e8359df6c8ced7d7b760fda2b2e5a1b997db8e386ddb76b9"
+  },
+  "analysis": {
+    "input_model": "mathematical-integers"
+  },
+  "function": {
+    "name": "short_circuit_and_empty",
+    "inputs": [
+      {
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "name": "y",
+        "type": "int32"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "t1",
+      "path_label": "B4F",
+      "inputs": {
+        "x": 0,
+        "y": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t2",
+      "path_label": "B4T.B3F",
+      "inputs": {
+        "x": 1,
+        "y": 0
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    },
+    {
+      "id": "t3",
+      "path_label": "B4T.B3T",
+      "inputs": {
+        "x": 1,
+        "y": 6
+      },
+      "generator": "z3",
+      "validation": "smt_model",
+      "execution_verified": false
+    }
+  ],
+  "diagnostics": [
+    {
+      "path_label": "B4F",
+      "status": "sat",
+      "predicate": "(not((x > 0)))",
+      "model_validated": true,
+      "solve_time_ms": 0.93395899999999998
+    },
+    {
+      "path_label": "B4T.B3F",
+      "status": "sat",
+      "predicate": "((x > 0)) and (not((y > 5)))",
+      "model_validated": true,
+      "solve_time_ms": 1.384196
+    },
+    {
+      "path_label": "B4T.B3T",
+      "status": "sat",
+      "predicate": "((x > 0)) and ((y > 5))",
+      "model_validated": true,
+      "solve_time_ms": 1.3382309999999999
+    }
+  ]
+}
